@@ -1,0 +1,12 @@
+{
+  "name": "claude-task-skills",
+  "description": "Portable task governance skills for Claude Code — create, close, list, and audit tasks with structured folder-based tracking",
+  "version": "1.0.0",
+  "author": {
+    "name": "Alexander vanRossum",
+    "url": "https://github.com/alexvanrossum"
+  },
+  "repository": "https://github.com/avanrossum/claude-task-skills",
+  "license": "MIT",
+  "keywords": ["tasks", "governance", "project-management", "session-management"]
+}

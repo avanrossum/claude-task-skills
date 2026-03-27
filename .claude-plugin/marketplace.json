@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-task-skills",
+  "description": "Portable task governance skills for Claude Code — create, close, list, and audit tasks with structured folder-based tracking",
+  "owner": {
+    "name": "Alexander vanRossum",
+    "email": "alex@avanrossum.com"
+  },
+  "plugins": [
+    {
+      "name": "claude-task-skills",
+      "description": "Portable task governance skills for Claude Code — create, close, list, and audit tasks with structured folder-based tracking",
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/avanrossum/claude-task-skills.git"
+      },
+      "homepage": "https://github.com/avanrossum/claude-task-skills"
+    }
+  ]
+}
