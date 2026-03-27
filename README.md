@@ -6,14 +6,20 @@ These skills are **project-agnostic**. They discover your project's conventions 
 
 ## Installation
 
+> All `/plugin` commands below are run **inside a Claude Code session** (CLI, desktop app, or IDE extension). They are Claude Code slash commands, not terminal commands.
+
 ### From GitHub
 
-```bash
+Open Claude Code and run:
+
+```
 /plugin marketplace add avanrossum/claude-task-skills
-/plugin install claude-task-skills@alexvanrossum-claude-task-skills
+/plugin install claude-task-skills@avanrossum-claude-task-skills
 ```
 
 ### From a local clone
+
+Clone the repo, then start Claude Code with the plugin loaded:
 
 ```bash
 git clone https://github.com/avanrossum/claude-task-skills.git
@@ -26,7 +32,7 @@ claude --plugin-dir ./claude-task-skills
 claude --plugin-dir /path/to/claude-task-skills
 ```
 
-Reload after making changes:
+Reload after making changes (inside a Claude Code session):
 ```
 /reload-plugins
 ```
