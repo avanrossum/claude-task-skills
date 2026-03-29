@@ -10,7 +10,7 @@ These skills are **project-agnostic**. They discover your project's conventions 
 
 ```bash
 /plugin marketplace add avanrossum/claude-task-skills
-/plugin install claude-task-skills@alexvanrossum-claude-task-skills
+/plugin install claude-task-skills@avanrossum-claude-task-skills
 ```
 
 ### From a local clone
