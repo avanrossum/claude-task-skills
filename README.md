@@ -14,8 +14,10 @@ Open Claude Code and run:
 
 ```
 /plugin marketplace add avanrossum/claude-task-skills
-/plugin install claude-task-skills@avanrossum-claude-task-skills
+/plugin install claude-task-skills@claude-task-skills
 ```
+
+The `@claude-task-skills` suffix is the marketplace name (set in `.claude-plugin/marketplace.json`). The plugin and the marketplace happen to share that name here, which looks repetitive but is correct.
 
 ### From a local clone
 

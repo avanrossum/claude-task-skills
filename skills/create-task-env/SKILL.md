@@ -175,9 +175,15 @@ tasks/YYYY-MM-DD_short-description/
 
 ### TASK.md Template
 
-Each task folder must contain a `TASK.md`:
+Each task folder must contain a `TASK.md` with YAML frontmatter. The frontmatter is mandatory — it is what `/list-tasks`, `/task-audit`, and the separate [claude-task-viewer](https://github.com/avanrossum/claude-task-viewer) dashboard all read to classify and filter tasks.
 
 ```markdown
+---
+status: in_progress
+priority: 1
+gh_issue_ref:
+---
+
 # Task: [Title]
 
 ## Summary
@@ -189,12 +195,17 @@ What was requested, constraints, open questions.
 ## Changes Made
 Bullet list of every change made during this task.
 
-## Status
-🔵 In Progress / ✅ Complete / 🔴 Blocked
-
 ## Notes
 Decisions, blockers, discoveries — update as you go.
 ```
+
+### Frontmatter schema
+
+- `status` — one of `pending`, `in_progress`, `completed`, `blocked`. The visual icons (🔵, ⏳, 🔴, 📋, ✅) used in `TASKS.md` are surface presentation, not data.
+- `priority` — integer. `1` is most urgent. New tasks default to `1`; tasks migrated from pre-frontmatter history default to `999` so they're clearly "unsorted legacy work."
+- `gh_issue_ref` — optional, form `owner/repo#number`. Leave blank or omit when not applicable.
+
+Any additional frontmatter keys (e.g., `assignee`, `tags`) are preserved on round-trip.
 
 ### Task Lifecycle
 
