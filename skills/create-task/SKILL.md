@@ -1,6 +1,6 @@
 ---
 name: create-task
-description: Start a new task — creates task folder, stages governance files, updates task tracker, and verifies existing in-progress tasks are clean before proceeding
+description: Start a new task — creates task folder, stages governance files with required frontmatter, updates task tracker, and verifies existing in-progress tasks are clean before proceeding
 argument-hint: <task description or reference>
 ---
 
@@ -9,6 +9,8 @@ argument-hint: <task description or reference>
 You are creating a new task. The user may provide a description, reference something from memory, or give a vague idea that needs scoping.
 
 **Arguments:** $ARGUMENTS
+
+**Requirement:** All tasks must have YAML frontmatter in their TASK.md file. This is mandatory for claude-task-viewer integration. If the project has existing tasks without frontmatter, run `/migrate-tasks` to upgrade them.
 
 ---
 
@@ -73,9 +75,15 @@ If the project has no task conventions defined:
    - Status: In Progress
    - Any pre-populated context from Step 1
 
-   Use the project's template if one exists. If not, use this minimal default:
+   Use the project's template if one exists. If not, use this minimal default with YAML frontmatter:
 
    ```markdown
+   ---
+   status: in_progress
+   priority: 1
+   gh_issue_ref:
+   ---
+
    # Task: [Title]
 
    ## Summary
@@ -93,6 +101,11 @@ If the project has no task conventions defined:
    ## Notes
    [Decisions, blockers, discoveries — update as you go]
    ```
+
+   **Frontmatter schema:**
+   - `status`: `pending`, `in_progress`, `completed`, or `blocked`
+   - `priority`: 1 (highest) → N; use 1 for newly created tasks
+   - `gh_issue_ref`: optional, for GitHub issue references (e.g., `owner/repo#123`)
 
 3. **Create any additional required files** per project conventions (change control docs, discovery files, etc.)
 
